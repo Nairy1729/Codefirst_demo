@@ -38,7 +38,6 @@ namespace DBfirst.Controllers
 
         public IActionResult Create()
         {
-            // Populate ViewBag.DepartmentId with department data for the dropdown in the view
             ViewBag.DepartmentId = new SelectList(_context.Departments, "DepartmentId", "Name");
             return View();
         }
@@ -48,13 +47,11 @@ namespace DBfirst.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Add the new employee to the context and save changes
                 _context.Employees.Add(employee);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            // Repopulate ViewBag.DepartmentId in case of validation failure to render the dropdown again
             ViewBag.DepartmentId = new SelectList(_context.Departments, "DepartmentId", "Name");
             return View(employee);
         }
