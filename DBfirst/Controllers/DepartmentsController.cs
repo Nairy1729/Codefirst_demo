@@ -32,7 +32,6 @@ namespace DBfirst.Controllers
         [HttpPost]
         public IActionResult Edit(Department department)
         {
-            //   var department1 = _context.Departments.FirstOrDefault(x => x.DepartmentId == department.DepartmentId );
             if (department != null)
             {
 
